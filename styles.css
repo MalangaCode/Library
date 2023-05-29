@@ -1,0 +1,55 @@
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+:root{
+    --color1: #27187E;
+    --color2: #758BFD;
+    --color3: #AEB8FE;
+    --color4: #F1F2F6;
+    --color5: #FF8600;
+    --font1: 'Poiret One', cursive;
+}
+html{
+    font-size: 16px;
+}
+body{
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+}
+header{
+    background-color: var(--color3);
+    font-family: var(--font1);
+    font-size: 3rem;
+    padding: 1rem;
+}
+main{
+    background-color: var(--color4);
+}
+footer{
+    background-color: var(--color5);
+    font-family: var(--font1);
+    font-size: 1.5rem;
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+}
