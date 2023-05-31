@@ -30,6 +30,7 @@ time, mark, audio, video {
 }
 html{
     font-size: 16px;
+    font-family: var(--font1);
 }
 body{
     display: grid;
@@ -37,19 +38,92 @@ body{
     height: 100vh;
 }
 header{
-    background-color: var(--color3);
+    background-color: var(--color2);
     font-family: var(--font1);
     font-size: 3rem;
     padding: 1rem;
+    color: var(--color4);
 }
+#favDialog{
+    border: none;
+    border-radius: 10px 100px / 120px;
+    width: min(80vw, 30rem);
+}
+form{
+    display: grid;
+    place-items: center;
+}
+legend{
+    font-weight: bold;
+    font-size: 2rem;
+}
+button,
+label,
+input,
+select{
+  display: block;
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0.2rem;
+  box-sizing: border-box;
+  width: 10rem;
+  height: 30px;
+}
+label{
+    padding: 0;
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+
 main{
+    background-color: var(--color3);
+    display: grid;
+    place-items: center;
+    padding: 2rem;
+}
+main > div{
+   width: min(90%, 60rem);
+    height: 100%;
+    
+    display: grid;
+    gap: 1rem;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+    padding: 1rem;
+}
+.card{
     background-color: var(--color4);
+    display: grid;
+    place-items: center;
+    border-radius: 10px 100px / 120px;
+}
+.card :first-child{
+    color: var(--color5);
+    font-size: 2rem;
+}
+.card p{
+    color: var(--color1);
+}
+main > div > button{
+    height: 100%;
+    width: 100%;
+    border-radius: 10px 100px / 120px;
+    border: none;
+    background-color: var(--color4);
+    color: var(--color5);
+    font-size: 2rem;
+}
+main > div > button:hover{
+    background-color: var(--color5);
+    color: var(--color4);
 }
 footer{
-    background-color: var(--color5);
+    background-color: var(--color2);
     font-family: var(--font1);
     font-size: 1.5rem;
     display: grid;
     place-items: center;
     padding: 1rem;
+    color: var(--color4);
 }
