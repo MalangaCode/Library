@@ -16,7 +16,7 @@
         </p>
     </header>
     <main>
-        <dialog id="favDialog">
+        <dialog id="bookInfoDialog">
             <form>
              
                 <legend>Book Information</legend>
@@ -31,14 +31,16 @@
                 </div>
                 <div>
                     <label for="pages">Pages</label>
-                    <input type="text" id="pages">
+                    <input type="number" id="pages">
                 </div>
-                <div class="">
-                    <label for="read">Read</label>
-                    <label for="Yes">Yes</label>
-                    <input type="radio" name="read" value="Yes" id="Yes">
-                    <label for="NO">No</label>
-                    <input type="radio" name="read" value="No" id="NO">
+                <div>     
+                    <legend>Have you read the book?</legend>  
+                    <ul>
+                        <li>
+                            <input type="checkbox" name="power" id="power">
+                            <label for="power"><span class="yes">YES</span> <span class="no">NO</span></label>
+                        </li>
+                    </ul>
                 </div>
                 <div>
                     <button value="cancel" formmethod="dialog">Cancel</button>
@@ -58,42 +60,7 @@
                 <p>Pages</p>
                 <p>Read</p>
             </div>   
-            <div class="card">
-                <p>Title</p>
-                <p>Author</p>
-                <p>Pages</p>
-                <p>Read</p>
-            </div> 
-            <div class="card">
-                <p>Title</p>
-                <p>Author</p>
-                <p>Pages</p>
-                <p>Read</p>
-            </div>  
-            <div class="card">
-                <p>Title</p>
-                <p>Author</p>
-                <p>Pages</p>
-                <p>Read</p>
-            </div> 
-            <div class="card">
-                <p>Title</p>
-                <p>Author</p>
-                <p>Pages</p>
-                <p>Read</p>
-            </div> 
-            <div class="card">
-                <p>Title</p>
-                <p>Author</p>
-                <p>Pages</p>
-                <p>Read</p>
-            </div> 
-            <div class="card">
-                <p>Title</p>
-                <p>Author</p>
-                <p>Pages</p>
-                <p>Read</p>
-            </div> 
+            
         </div>
     </main>
     <footer>

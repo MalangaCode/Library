@@ -1,24 +1,33 @@
 const showButton = document.getElementById('showDialog');
-const favDialog = document.getElementById('favDialog');
-const outputBox = document.querySelector('output');
-const selectEl = favDialog.querySelector('select');
-const confirmBtn = favDialog.querySelector('#confirmBtn');
+const infoDialog = document.getElementById('bookInfoDialog');
+const titleOutput = document.getElementById('title');
+const authorOutput = document.getElementById('author');
+const pagesOutput = document.getElementById('pages');
+const readOutput = document.getElementById('power');
+const confirmBtn = infoDialog.querySelector('#confirmBtn');
+
+// show the book info dialog
 
 showButton.addEventListener('click', () => {
-  favDialog.showModal();
+  infoDialog.showModal();
+ 
 });
 
-selectEl.addEventListener('change', (e) => {
-  confirmBtn.value = selectEl.value;
+// clear form spaces
+
+infoDialog.addEventListener('close', (e) => {
+  titleOutput.value = '';
+  authorOutput.value = '';
+  pagesOutput.value = '';
 });
 
-favDialog.addEventListener('close', (e) => {
-  outputBox.value = favDialog.returnValue === 'default' ? "No return value." : `ReturnValue: ${favDialog.returnValue}.`;
-});
+// add info to myLibrary array
 
 confirmBtn.addEventListener('click', (event) => {
-  event.preventDefault(); // We don't want to submit this fake form
-  favDialog.close(selectEl.value); // Have to send the select box value here.
+  event.preventDefault(); 
+  addBookToLibrary (titleOutput.value, authorOutput.value, pagesOutput.value, readOutput.value);
+  console.log(myLibrary)
+ infoDialog.close();
 });
 
 let myLibrary = [];
@@ -36,10 +45,10 @@ Book.prototype.info = function () {
 };
 
 function addBookToLibrary(title, author, pages, read) {
-  // do stuff here
+  
   myLibrary.push(new Book(title, author, pages, read))
 }
 // addBookToLibrary('padre rico padre pobre', 'robert kiyosaky', 123, 'read');
 // addBookToLibrary('Cien anos de soledad', 'Gabriel Garcia Marquez', 200, 'Not read yet');
 
-console.log(myLibrary[0].info())
+// console.log(myLibrary[0].info())

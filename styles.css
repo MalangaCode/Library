@@ -21,11 +21,11 @@ time, mark, audio, video {
 }
 
 :root{
-    --color1: #27187E;
-    --color2: #758BFD;
-    --color3: #AEB8FE;
-    --color4: #F1F2F6;
-    --color5: #FF8600;
+    --color1: #ECF8F8;
+    --color2: #FDFFFC;
+    --color3: #EEE4E1;
+    --color4: #E7D8C9;
+    --color5: #090909;
     --font1: 'Poiret One', cursive;
 }
 html{
@@ -38,13 +38,13 @@ body{
     height: 100vh;
 }
 header{
-    background-color: var(--color2);
+    background-color: var(--color4);
     font-family: var(--font1);
     font-size: 3rem;
     padding: 1rem;
-    color: var(--color4);
+    color: var(--color5);
 }
-#favDialog{
+#bookInfoDialog{
     border: none;
     border-radius: 10px 100px / 120px;
     width: min(80vw, 30rem);
@@ -74,10 +74,67 @@ label{
     margin: 0;
     font-size: 1.5rem;
 }
+/*  */
+ul{
+    display: grid;
+    place-items: center;
+}
+  li {
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+  }
+  label {
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    position: relative;
+  }
+  label span {
+    position: absolute;
+  }
+  input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 44px;
+    height: 24px;
+    border-radius: 12px;
+    border: 2px solid black;
+    background: #eee;
+    transition: all 0.4s;
+  }
+  input[type="checkbox"]::before {
+    width: 16px;
+    height: 16px;
+    border-radius: 9px;
+    background-color: var(--color5);
+    content: '';
+    position: absolute;
+    top: 7px;
+    left: 16%;
+    transition: all 0.4s;
+  }
+  input[type="checkbox"]:checked {
+    background-color: var(--color2);
+    transition: all 0.4s;
+  }
 
+  input[type="checkbox"]:checked::before {
+    left: 35%;
+    transition: all 0.4s;
+  }
+  input[type="checkbox"] ~ label .yes, input[type="checkbox"]:checked ~ label .no {
+    opacity: 0;
+  }
 
+  input[type="checkbox"] ~ label .no, input[type="checkbox"]:checked ~ label .yes {
+    opacity: 1;
+  }
+/*  */
 main{
-    background-color: var(--color3);
+    background-color: var(--color2);
     display: grid;
     place-items: center;
     padding: 2rem;
@@ -93,18 +150,18 @@ main > div{
     padding: 1rem;
 }
 .card{
-    background-color: var(--color4);
+    background-color: var(--color3);
     display: grid;
     place-items: center;
     border-radius: 10px 100px / 120px;
 }
 .card :first-child{
-    color: var(--color5);
     font-size: 2rem;
 }
 .card p{
-    color: var(--color1);
+    color: var(--color5);
 }
+/* Add book button */
 main > div > button{
     height: 100%;
     width: 100%;
@@ -119,11 +176,11 @@ main > div > button:hover{
     color: var(--color4);
 }
 footer{
-    background-color: var(--color2);
+    background-color: var(--color4);
     font-family: var(--font1);
     font-size: 1.5rem;
     display: grid;
     place-items: center;
     padding: 1rem;
-    color: var(--color4);
+    color: var(--color5);
 }
